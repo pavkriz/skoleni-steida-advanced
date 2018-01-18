@@ -4,22 +4,25 @@ import { fontFamily } from '../theme/index';
 
 type Props = {
   children: React.Node,
-  bold?: boolean,
+  onPress?: () => void,
 };
 
-export default class Text extends React.PureComponent<Props> {
+export default class Button extends React.PureComponent<Props> {
+  handleButtonClick = () => {
+    if (this.props.onPress) this.props.onPress();
+  };
   render() {
     return (
-      <span>
+      <button onClick={this.handleButtonClick}>
         {this.props.children}
         <style jsx>{`
           span {
             color: #333;
             ${this.props.bold === true ? 'font-weight: bold' : ''};
-            font-family: ${fontFamily};
+            font-family: ;
           }
         `}</style>
-      </span>
+      </button>
     );
   }
 }

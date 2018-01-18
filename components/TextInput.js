@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react';
 import Text from './Text';
+import { fontFamily } from '../theme/index';
 
 type Value = string;
 
@@ -18,6 +19,7 @@ export default class TextInput extends React.PureComponent<Props> {
     return (
       <React.Fragment>
         <Text>{this.props.label}: </Text>
+        <br />
         <input
           type="text"
           value={this.props.value}
@@ -27,9 +29,7 @@ export default class TextInput extends React.PureComponent<Props> {
           input {
             color: #333;
             ${this.props.bold === true ? 'font-weight: bold' : ''};
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-              Helvetica, Arial, sans-serif, 'Apple Color Emoji',
-              'Segoe UI Emoji', 'Segoe UI Symbol';
+            font-family: ${fontFamily};
           }
         `}</style>
       </React.Fragment>
