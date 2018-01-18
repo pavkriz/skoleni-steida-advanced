@@ -1,0 +1,13 @@
+[ignore]
+.*/node_modules/npmconf/.*
+.*/node_modules/bcryptjs/.*
+.*/node_modules/config-chain/.*
+
+[include]
+
+[lints]
+all=error
+unclear-type=off
+
+[options]
+include_warnings=true
